@@ -46,11 +46,13 @@ app.use(
   })
 );
 
-// development mode uses Vite, production mode uses static files
-if (process.env.NODE_ENV === "development") {
-  setupVite(app, server).catch(console.error);
-} else {
-  serveStatic(app);
+// On Vercel, static files are served by the CDN — don't serve them from the serverless function
+if (!process.env.VERCEL) {
+  if (process.env.NODE_ENV === "development") {
+    setupVite(app, server).catch(console.error);
+  } else {
+    serveStatic(app);
+  }
 }
 
 async function startServer() {
