@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1782201710377,
+      "tag": "0000_pretty_night_thrasher",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1782201835845,
+      "tag": "0001_charming_beyonder",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1782201894586,
+      "tag": "0002_uneven_psylocke",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --primary: #C5572D;
+  --primary-foreground: #F0ECE3;
+  --sidebar-primary: #C5572D;
+  --sidebar-primary-foreground: #F0ECE3;
+  --chart-1: #C5572D;
+  --chart-2: #B89656;
+  --chart-3: #7A9471;
+  --chart-4: #F6F1E7;
+  --chart-5: #1C1F2B;
+  --radius: 0.375rem; /* Less rounded corners (6px-8px) for B2B look */
+  --background: #121212;
+  --foreground: #F5F5F5;
+  --card: #FAF9F6;
+  --card-foreground: #1C1A17;
+  --popover: #FAF9F6;
+  --popover-foreground: #1C1A17;
+  --secondary: #FAF9F6;
+  --secondary-foreground: #6B6458;
+  --muted: #E4E4E7;
+  --muted-foreground: #71717A;
+  --accent: #B89656;
+  --accent-foreground: #FAF9F6;
+  --destructive: #A33A3A;
+  --destructive-foreground: #F0ECE3;
+  --border: rgba(184, 150, 86, 0.3);
+  --input: rgba(184, 150, 86, 0.3);
+  --ring: #B89656;
+  --sidebar: #FAF9F6;
+  --sidebar-foreground: #1C1A17;
+  --sidebar-accent: #B89656;
+  --sidebar-accent-foreground: #FAF9F6;
+  --sidebar-border: rgba(184, 150, 86, 0.3);
+  --sidebar-ring: #B89656;
+}
+
+.dark {
+  --primary: #C5572D;
+  --primary-foreground: #F5F5F5;
+  --sidebar-primary: #C5572D;
+  --sidebar-primary-foreground: #F5F5F5;
+  --background: #121212;
+  --foreground: #F5F5F5;
+  --card: #FAF9F6;
+  --card-foreground: #1C1A17;
+  --popover: #FAF9F6;
+  --popover-foreground: #1C1A17;
+  --secondary: #FAF9F6;
+  --secondary-foreground: #6B6458;
+  --muted: #E4E4E7;
+  --muted-foreground: #71717A;
+  --accent: #B89656;
+  --accent-foreground: #FAF9F6;
+  --destructive: #A33A3A;
+  --destructive-foreground: #F0ECE3;
+  --border: rgba(184, 150, 86, 0.3);
+  --input: rgba(184, 150, 86, 0.3);
+  --ring: #B89656;
+  --sidebar: #FAF9F6;
+  --sidebar-foreground: #1C1A17;
+  --sidebar-accent: #B89656;
+  --sidebar-accent-foreground: #FAF9F6;
+  --sidebar-border: rgba(184, 150, 86, 0.3);
+  --sidebar-ring: #B89656;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
+
+/* ==========================================================================
+   Color Theme Overrides: Off-Black Background and Off-White Cards/Boxes
+   ========================================================================== */
+
+/* 1. Global Page Backgrounds (change #14161F to off-black #121212) */
+body,
+.bg-\[\#14161F\],
+.bg-\[\#14161F\]\/90,
+.bg-\[\#14161F\]\/60,
+.bg-\[\#14161F\]\/40 {
+  background-color: #121212 !important;
+}
+
+/* 2. Global Card & Container Backgrounds (change #1C1F2B to off-white #FAF9F6) */
+.bg-\[\#1C1F2B\],
+.bg-\[\#1C1F2B\]\/95,
+.bg-\[\#1C1F2B\]\/98 {
+  background-color: #FAF9F6 !important;
+  color: #1C1A17 !important;
+  border-color: rgba(184, 150, 86, 0.4) !important;
+}
+
+/* 3. Text Color Adjustments inside Off-White Cards/Boxes */
+/* Override light text inside off-white containers to off-black */
+.bg-\[\#1C1F2B\] .text-\[\#F0ECE3\],
+.bg-\[\#1C1F2B\].text-\[\#F0ECE3\], /* Direct match on same element (e.g. search input) */
+.bg-\[\#1C1F2B\]\/95 .text-\[\#F0ECE3\],
+.bg-\[\#1C1F2B\]\/98 .text-\[\#F0ECE3\],
+.bg-\[\#1C1F2B\] h1,
+.bg-\[\#1C1F2B\] h2,
+.bg-\[\#1C1F2B\] h3,
+.bg-\[\#1C1F2B\] h4,
+.bg-\[\#1C1F2B\] p,
+.bg-\[\#1C1F2B\] span,
+.bg-\[\#1C1F2B\] label,
+.bg-\[\#1C1F2B\] font,
+.bg-\[\#1C1F2B\]\/95 span,
+.bg-\[\#1C1F2B\]\/98 span {
+  color: #1C1A17 !important;
+}
+
+/* Muted description text inside off-white containers -> darker gray */
+.bg-\[\#1C1F2B\] .text-\[\#9A95A8\] {
+  color: #6B6458 !important;
+}
+
+/* Golden/brass titles/highlights inside off-white containers -> darker contrast brass/gold */
+.bg-\[\#1C1F2B\] .text-\[\#B89656\] {
+  color: #8B6F37 !important;
+}
+
+/* Ensure active/hover links inside mobile menu and sidebar look good */
+.bg-\[\#1C1F2B\]\/95 .bg-\[\#C5572D\] span,
+.bg-\[\#1C1F2B\]\/98 .bg-\[\#C5572D\] span {
+  color: #FAF9F6 !important; /* Keep text white inside primary colored active tabs */
+}
+
+/* 4. Input Controls & Select dropdowns inside cards */
+/* Give inputs inside cards a clean white background with dark text */
+.bg-\[\#1C1F2B\] input,
+.bg-\[\#1C1F2B\] textarea,
+.bg-\[\#1C1F2B\] select,
+.bg-\[\#1C1F2B\] .bg-\[\#14161F\] {
+  background-color: #FFFFFF !important;
+  color: #1C1A17 !important;
+  border-color: rgba(184, 150, 86, 0.4) !important;
+}
+.bg-\[\#1C1F2B\] input::placeholder,
+.bg-\[\#1C1F2B\] textarea::placeholder {
+  color: rgba(107, 100, 88, 0.5) !important;
+}
+
+/* 5. Custom borders for cards */
+.border-\[\#B89656\]\/20,
+.border-\[\#B89656\]\/15,
+.border-\[\#B89656\]\/25,
+.border-\[\#B89656\]\/30,
+.border-\[\#B89656\]\/35 {
+  border-color: rgba(139, 111, 55, 0.3) !important;
+}
+
+/* 6. Outline buttons inside light cards */
+.bg-\[\#1C1F2B\] .border-\[\#B89656\],
+.bg-\[\#1C1F2B\] .text-\[\#B89656\],
+.bg-\[\#1C1F2B\] .hover\:bg-\[\#C5572D\]\/10:hover {
+  border-color: #8B6F37 !important;
+  color: #8B6F37 !important;
+}
+
+/* 7. Quick fix for vector QR code icons to stand out */
+.bg-\[\#1C1F2B\] svg.text-\[\#14161F\] {
+  color: #1C1A17 !important;
+}
