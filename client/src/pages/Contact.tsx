@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] antialiased selection:bg-[#C5572D] selection:text-white noise-bg">
+    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] antialiased selection:bg-[#C5572D] selection:text-white noise-bg md:ml-56">
       <Navbar />
 
       {/* Main Contact Section */}

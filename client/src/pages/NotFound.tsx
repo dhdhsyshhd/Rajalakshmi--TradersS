@@ -11,7 +11,7 @@ export default function NotFound() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-[#14161F] text-[#F0ECE3] noise-bg">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#14161F] text-[#F0ECE3] noise-bg md:ml-56">
       <Card className="w-full max-w-md mx-4 border border-[#B89656]/20 bg-[#1C1F2B] rounded-md shadow-sm relative overflow-hidden">
         {/* Decorative corner seal stamp */}
         <div className="absolute top-4 right-4 w-10 h-10 rounded-full border border-[#B89656]/30 bg-[#14161F] flex items-center justify-center text-[7px] text-[#B89656] font-bold tracking-[0.1em] shadow-sm uppercase z-20 select-none pointer-events-none">

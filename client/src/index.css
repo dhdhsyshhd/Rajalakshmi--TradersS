@@ -264,3 +264,11 @@ body,
 .bg-\[\#1C1F2B\] svg.text-\[\#14161F\] {
   color: #1C1A17 !important;
 }
+
+/* 8. Desktop Sidebar Offset — push all page content right on md+ */
+@media (min-width: 768px) {
+  body > #root > * > .page-content,
+  .sidebar-offset {
+    margin-left: 14rem; /* 224px = w-56 */
+  }
+}

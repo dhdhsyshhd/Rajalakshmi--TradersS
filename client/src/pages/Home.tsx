@@ -21,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] flex flex-col antialiased selection:bg-[#C5572D] selection:text-white noise-bg">
+    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] flex flex-col antialiased selection:bg-[#C5572D] selection:text-white noise-bg md:ml-56">
       <Navbar />
 
       {/* Top Search Bar (Above all Home Page content) */}

@@ -18,7 +18,7 @@ export default function OrderSuccess() {
   const deliveryTime = queryParams.get("deliveryTime") || "3-5 Days";
 
   return (
-    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] antialiased selection:bg-[#C5572D] selection:text-white noise-bg">
+    <div className="min-h-screen bg-[#14161F] text-[#F0ECE3] antialiased selection:bg-[#C5572D] selection:text-white noise-bg md:ml-56">
       <Navbar />
 
       <section className="py-20 bg-[#14161F] flex items-center justify-center relative min-h-[70vh]">
